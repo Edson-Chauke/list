@@ -1,1 +1,106 @@
-<p>landing-page works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>To-Do List</title>
+  <style>
+    body {
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+    }
+    .task-list {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>To-Do List</h1>
+
+    <!-- Add Task Form -->
+    <form id="addTaskForm">
+      <div class="form-group">
+        <label for="taskDescription">Task Description:</label>
+        <input type="text" class="form-control" id="taskDescription" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Task</button>
+    </form>
+
+    <!-- Task List -->
+    <ul id="taskList" class="list-group task-list">
+      <!-- Task items will be dynamically added here -->
+    </ul>
+  </div>
+
+  <!-- JavaScript and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const addTaskForm = document.getElementById('addTaskForm');
+      const taskList = document.getElementById('taskList');
+
+      addTaskForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const taskDescription = document.getElementById('taskDescription').value;
+
+        // Add the task dynamically to the task list
+        addTaskToUI(taskDescription);
+
+        // Send a request to your server to add the task to the database
+        // (You should implement the server-side logic in your Node.js/Express.js app)
+
+        // Clear the form
+        addTaskForm.reset();
+      });
+
+      // Function to add a task to the UI
+      function addTaskToUI(description) {
+        const listItem = document.createElement('li');
+        listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+        listItem.innerHTML = `
+          ${description}
+          <div>
+            <button type="button" class="btn btn-info btn-sm mr-2" onclick="editTask('${description}')">Edit</button>
+            <button type="button" class="btn btn-danger btn-sm" onclick="deleteTask('${description}')">Delete</button>
+          </div>
+        `;
+        taskList.appendChild(listItem);
+      }
+
+      // Function to simulate editing a task (you would handle this on the server side)
+      window.editTask = function (description) {
+        const newDescription = prompt('Edit task:', description);
+        if (newDescription !== null) {
+          // Update the task in the UI (you would update it in the database on the server)
+          taskList.childNodes.forEach((node) => {
+            if (node.textContent.includes(description)) {
+              node.firstChild.textContent = newDescription;
+            }
+          });
+        }
+      };
+
+      // Function to simulate deleting a task (you would handle this on the server side)
+      window.deleteTask = function (description) {
+        if (confirm(`Are you sure you want to delete the task: ${description}?`)) {
+          // Remove the task from the UI (you would remove it from the database on the server)
+          taskList.childNodes.forEach((node) => {
+            if (node.textContent.includes(description)) {
+              node.remove();
+            }
+          });
+        }
+      };
+    });
+  </script>
+</body>
+</html>
+
