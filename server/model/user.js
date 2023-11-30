@@ -1,4 +1,3 @@
-// user.js
 const Mongoose = require("mongoose")
 const UserSchema = new Mongoose.Schema({
   username: {
@@ -8,6 +7,7 @@ const UserSchema = new Mongoose.Schema({
   },
   password: {
     type: String,
+    minlength: 6,
     required: true,
   },
   role: {
@@ -16,6 +16,3 @@ const UserSchema = new Mongoose.Schema({
     required: true,
   },
 })
-
-const User = Mongoose.model("user", UserSchema)
-module.exports = User

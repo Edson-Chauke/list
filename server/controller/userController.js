@@ -1,5 +1,6 @@
 const User = require("../model/User")
 // auth.js
+
 exports.register = async (req, res, next) => {
     const { username, password } = req.body
     if (password.length < 6) {
