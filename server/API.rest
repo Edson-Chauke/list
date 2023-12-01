@@ -1,3 +1,36 @@
-@SERVER=http://localhost:9000;
+@SERVER=http://localhost:8000
 
-GET http://localhost:9000
+GET {{SERVER}}
+
+
+### register
+POST http://localhost:8000/api/register
+content-type: application/json
+
+{
+ "firstname": "edsorn",
+ "lastname": "chauke",
+ "email": "edson@gmail.com",
+ "password":"123457"
+}
+
+
+
+### login
+POST http://localhost:27017/api/auth/login
+content-type: application/json
+
+{
+"email": "edson@gmail.com",
+ "password":"123456",
+}
+
+
+###create
+POST http://localhost:8000/api/add
+content-type: application/json
+
+{
+  "name": "nike",
+ "number":"2 tops"
+}
