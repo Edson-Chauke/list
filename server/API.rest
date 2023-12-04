@@ -8,21 +8,21 @@ POST http://localhost:8000/api/register
 content-type: application/json
 
 {
- "firstname": "edsorn",
+ "firstname": "edson",
  "lastname": "chauke",
  "email": "edson@gmail.com",
- "password":"123457"
+ "password":"123456"
 }
 
 
 
 ### login
-POST http://localhost:27017/api/auth/login
+POST http://localhost:8000/api/login
 content-type: application/json
 
 {
 "email": "edson@gmail.com",
- "password":"123456",
+ "password":"123456"
 }
 
 
@@ -34,3 +34,4 @@ content-type: application/json
   "name": "nike",
  "number":"2 tops"
 }
+ 

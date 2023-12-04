@@ -1,12 +1,16 @@
-const Mongoose = require("mongoose")
-const localDB = `mongodb =//localhost:27017/list`;
+const mongoose = require('mongoose');
+
+const localDB = `mongodb://localhost:27017/list`;
+
 const connectDB = async () => {
-  await Mongoose.connect(localDB, {
+  await mongoose.connect(localDB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   console.log("MongoDB Connected")
 }
+
 module.exports = connectDB
+
 
 

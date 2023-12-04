@@ -1,7 +1,7 @@
 const User = require("../model/User")
 
 
-// auth.js
+// REGISRER
 exports.register = async (req, res, next) => {
     const {firstname,lastname,email,password } = req.body
     if (password.length < 6) {
@@ -27,7 +27,7 @@ exports.register = async (req, res, next) => {
     }
   }
 
-// auth.js
+// LOGIN
 exports.login = async (req, res, next) => {
   const { email, password } = req.body
   // Check if username and password is provided
@@ -46,7 +46,7 @@ exports.login = async (req, res, next) => {
     } else {
       res.status(200).json({
         message: "Login successful",
-        user,
+        user
       })
     }
   // } catch (error) {
