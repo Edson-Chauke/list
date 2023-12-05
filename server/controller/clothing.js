@@ -41,32 +41,30 @@ exports.update = async (req, res) => {
 exports.remove = async (req, res) => {
 
   try {
-    await Item.findByIdAndDelete(req.params.id);
+    await Clothing.findByIdAndDelete(req.params.id);
     res.status(204).send({ message: "The item has been deleted" });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 }
-//get All clothing function
-exports.getAllClothing = async (req, res) => {
+
+//get All clothing function// read
+exports.read = async (req, res) => {
   try {
-    const all_Clothing = await Task.find({});
-    res.json(all_Clothing);
+    const clothing= await Clothing.find();
+    res.json(clothing);
   } catch (error) {
-    res.json({
-      message: "Something went wrong, try again later",
-      error: error.message,
-    });
+    res.status(500).json({ error: error })
   }
-};
-
-//get one clothes
-exports.getOneClothing = async (req, res) => {
-  const { id } = req.params;
-
-  if (!id) {
-    return res.json({ message: "Task id does not exit" });
-  }
-  const clothing = await Clothing.findById(id)
-  res.json(clothing)
 }
+
+// //get one clothes
+// exports.getOneClothing = async (req, res) => {
+//   const { id } = req.params;
+
+//   if (!id) {
+//     return res.json({ message: "Task id does not exit" });
+//   }
+//   const clothing = await Clothing.findById(id)
+//   res.json(clothing)
+// }

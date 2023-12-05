@@ -1,10 +1,10 @@
-@SERVER=http://localhost:8000
+@SERVER=http://localhost:2000
 
 GET {{SERVER}}
 
 
 ### register
-POST http://localhost:8000/api/register
+POST http://localhost:2000/api/register
 content-type: application/json
 
 {
@@ -17,7 +17,7 @@ content-type: application/json
 
 
 ### login
-POST http://localhost:8000/api/login
+POST http://localhost:2000/api/login
 content-type: application/json
 
 {
@@ -27,11 +27,37 @@ content-type: application/json
 
 
 ###create
-POST http://localhost:8000/api/add
+POST http://localhost:2000/api/create
 content-type: application/json
 
 {
-  "name": "nike",
- "number":"2 tops"
+  "name": "edson",
+ "number":"chihauke"
 }
- 
+
+###Update 
+
+PUT http://localhost:2000/api/items/656ebd9b120c5e72d9af672d
+content-type: application/json
+
+{
+
+  "name": "Adidas", 
+  "number": "4 top"
+  
+ }
+
+#####read
+
+
+GET http://localhost:2000/api/items
+
+
+### delete
+DELETE http://localhost:2000/api/items/656ec1fa0830d31d86973b12
+content-type: application/json
+
+{
+"email": "edson@gmail.com",
+ "password":"123456"
+}

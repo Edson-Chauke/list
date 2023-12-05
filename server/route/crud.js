@@ -2,15 +2,16 @@
 
 const express = require("express");
 const router = express.Router(); 
-const { create, read, update, } = require("../controller/clothing"); 
+const { update,remove,read,create} = require("../controller/clothing"); 
 
-// create clothing
-router.post("/add", create).post(create); 
+ 
 
 //update item
-router.route("/update/:id").put(update);
-router.delete("/items/:id");
-router.get("/items/:id");
+router.post("/create", create);
+router.get("/items", read);
+router.put("/items/:id",update);
+router.delete("/items/:id", remove)
+
 
 
 
