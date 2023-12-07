@@ -8,10 +8,10 @@ POST http://localhost:2000/api/register
 content-type: application/json
 
 {
- "firstname": "edson",
+ "firstname": "edson44233",
  "lastname": "chauke",
- "email": "edson@gmail.com",
- "password":"123456"
+ "email": "edson@gmail22.com",
+ "password":"123457"
 }
 
 
@@ -31,7 +31,7 @@ POST http://localhost:2000/api/create
 content-type: application/json
 
 {
-  "name": "edson",
+  "name": "edson1",
  "number":"chihauke"
 }
 

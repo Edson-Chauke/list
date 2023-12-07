@@ -15,7 +15,9 @@ export class UsersService {
 
   // register function
   register(user: User): Observable<User> {
-    return this.http.post<User>(`${this.baseUrl})/register`, user);
+    console.log(user)
+    return this.http.post<User>(`${this.baseUrl}/register`, user);
+
   }
 
   // login function
@@ -33,6 +35,6 @@ export class UsersService {
     return this.http.put<any>(`${this.baseUrl}/update`, clothing);
   }
   read(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/read`);
+    return this.http.get<any>(`${this.baseUrl}/items`);
   }
 }

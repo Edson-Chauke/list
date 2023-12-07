@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Clothing } from 'src/app/interface/clothing';
 import { UsersService } from 'src/app/services/users.service';
 import { FormControl, FormGroup } from '@angular/forms';
+
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -10,7 +11,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class LandingPageComponent {
 
   clothing: Clothing[] = [];
-id: any;
+      id: any;
 
   constructor(private usersService: UsersService) { }
 
@@ -69,5 +70,9 @@ update(id:any){
     console.log(res);
   })
 }
+read(){
+
  
+ 
+}
 }
