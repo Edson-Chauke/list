@@ -14,8 +14,8 @@ export class UsersService {
   constructor(private http: HttpClient) {}
 
   // register function
-  register(users: User): Observable<User> {
-    return this.http.post<User>(`${this.baseUrl})/register`, users);
+  register(user: User): Observable<User> {
+    return this.http.post<User>(`${this.baseUrl})/register`, user);
   }
 
   // login function

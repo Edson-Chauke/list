@@ -4,7 +4,7 @@
     <!-- Input field and button to add to the list -->
     <div class="input-group mb-3">
       <input type="text" class="form-control"  placeholder="Enter item">
-      <button class="btn btn-primary" >Add to List</button>
+      <button class="btn btn-primary" (click)="create()">Add to List</button>
     </div>
   
     <!-- Search input and buttons -->
@@ -17,12 +17,20 @@
     </div>
   
     <!-- Display the list -->
+
+   
+
     <ul class="list-group">
-      <li  class="list-group-item d-flex justify-content-between align-items-center">
+      <li *ngFor="let clothings of clothing; let i = index" class="list-group-item d-flex justify-content-between align-items-center">
+
+      
+
+        <tr>{{clothings.name}}</tr>
+        <tr>{{clothings.number}}</tr>
         
         <div>
           <button class="btn btn-warning btn-sm" >Edit</button>
-          <button class="btn btn-danger btn-sm" >Delete</button>
+          <button class="btn btn-danger btn-sm" (click)="delete" >Delete</button>
         </div>
       </li>
     </ul>
@@ -31,6 +39,6 @@
     <div class="input-group mt-3">
       <input type="number" class="form-control"  placeholder="Enter index to update">
       <input type="text" class="form-control"  placeholder="Enter new value">
-      <button class="btn btn-warning" >Update Item</button>
+      <button class="btn btn-warning" (click)="update">Update Item</button>
     </div>
   </div>

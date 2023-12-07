@@ -11,9 +11,7 @@ import { Route } from '@angular/router';
 export class RegisterPageComponent {
   router: any;
 
-  ngOnInit(): void {
-    this.register();
-    }
+  ngOnInit(): void {}
   
   
   constructor (private userservice: UsersService,){}
@@ -26,12 +24,12 @@ export class RegisterPageComponent {
   
   })
   
-  register(){
+  register(firstname:string, lastname:string, email: string, password: string){
   
-    this.userservice.register(this.form.value).subscribe((res:any)=> {
+    this.userservice.register({firstname, lastname, email, password}).subscribe((res:any)=> {
       console.log(res);
   
-    this.router.navigate(['/landing-page']);
+    this.router.navigate(['/dashboard']);
   
     })
   } 

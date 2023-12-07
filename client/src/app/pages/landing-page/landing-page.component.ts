@@ -48,7 +48,7 @@ id: any;
 
     this.usersService.create(clothing).subscribe((res:any) =>{
       console.log(res);
-      window.location.reload();
+    
     })
   }
 
