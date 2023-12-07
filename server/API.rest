@@ -8,10 +8,10 @@ POST http://localhost:2000/api/register
 content-type: application/json
 
 {
- "firstname": "edson44233",
- "lastname": "chauke",
- "email": "edson@gmail22.com",
- "password":"123457"
+ "firstname": "aaaaa",
+ "lastname": "aaaaaa",
+ "email": "a@a.a",
+ "password":"123456"
 }
 
 
@@ -31,8 +31,8 @@ POST http://localhost:2000/api/create
 content-type: application/json
 
 {
-  "name": "edson1",
- "number":"chihauke"
+  "name": "nike",
+ "number":"2"
 }
 
 ###Update 
@@ -54,7 +54,7 @@ GET http://localhost:2000/api/items
 
 
 ### delete
-DELETE http://localhost:2000/api/items/656ec1fa0830d31d86973b12
+DELETE http://localhost:2000/api/items/65718c110a987ee0bb89ebe1
 content-type: application/json
 
 {

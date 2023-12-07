@@ -48,6 +48,7 @@ export class LandingPageComponent {
     }
 
     this.usersService.create(clothing).subscribe((res:any) =>{
+      
       console.log(res);
     
     })

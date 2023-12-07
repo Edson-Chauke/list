@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { UsersService } from 'src/app/services/users.service';
-import { Route } from '@angular/router';
-import { Router } from 'express';
+
 
 @Component({
   selector: 'app-register-page',
@@ -10,17 +11,26 @@ import { Router } from 'express';
   styleUrls: ['./register-page.component.scss']
 })
 export class RegisterPageComponent {
-  router: any;
+
+  service: any;
+  usersservice: any;
 
   ngOnInit(): void {}
   
   
-  constructor (private userservice: UsersService, ){}
+  constructor (private userservice: UsersService, private router: Router){}
   
-
-  register(firstname:string, lastname:string, email: string, password: string){
+  form: FormGroup = new FormGroup({
+    firstname: new FormControl(''),
+    lastname: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl(''),
   
-    this.userservice.register({firstname, lastname, email, password}).subscribe((res:any)=> {
+  })
+  
+  register(){
+  
+    this.userservice.register(this.form.value).subscribe((res:any)=> {
       console.log(res);
   
     this.router.navigate(['/dashboard']);
