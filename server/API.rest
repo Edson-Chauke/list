@@ -53,11 +53,6 @@ content-type: application/json
 GET http://localhost:2000/api/items
 
 
-### delete
-DELETE http://localhost:2000/api/items/65718c110a987ee0bb89ebe1
-content-type: application/json
 
-{
-"email": "edson@gmail.com",
- "password":"123456"
-}
+### delete
+DELETE http://localhost:2000/api/items/6571af83aa2a6a786c13865e

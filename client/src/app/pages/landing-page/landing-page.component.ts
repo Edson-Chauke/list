@@ -60,6 +60,7 @@ delete(id:any){
 
   this.usersService.delete(id).subscribe((res:any)=>{
     window.location.reload();
+    console.log(id)
   })
 }
 ////update

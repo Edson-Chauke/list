@@ -28,8 +28,8 @@ export class UsersService {
   create(clothing: Clothing): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/create`, clothing);
   }
-  delete(clothing: Clothing): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/this.delete`, clothing);
+  delete(id: any): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/items/${id}`);
   }
   update(clothing: Clothing): Observable<any> {
     return this.http.put<any>(`${this.baseUrl}/update`, clothing);
