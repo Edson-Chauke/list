@@ -2,9 +2,9 @@
     <h2>List Operations</h2>
   
     <!-- Input field and button to add to the list -->
-    <div class="input-group mb-3">
+    <div class="input-group mb-3" [formGroup]="form">
       <input type="text" class="form-control"  formControlName="name" placeholder="Enter item">
-      <input type="text" class="form-control"  formControlName="number" placeholder="Enter item">
+      <input type="text" class="form-control"  formControlName="number" placeholder="Enter number of products">
       <button class="btn btn-primary" (click)="create()">Add to List</button>
     </div>
   

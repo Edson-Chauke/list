@@ -3,6 +3,7 @@ import { Clothing } from 'src/app/interface/clothing';
 import { UsersService } from 'src/app/services/users.service';
 import { FormControl, FormGroup } from '@angular/forms';
 
+
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -19,7 +20,7 @@ export class LandingPageComponent {
   number: string = '';
 
 
-  form = new FormGroup({
+  form: FormGroup  = new FormGroup({
     name: new FormControl(''),
     number: new FormControl(''), 
  })
